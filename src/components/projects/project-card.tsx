@@ -14,21 +14,19 @@ export function ProjectCard({
 }: Omit<Project, "colSpan">) {
   return (
     <Card className="flex h-full flex-col overflow-hidden transition-transform duration-300 hover:scale-105">
+      <Image
+        src={image.src}
+        alt={`Imagen del proyecto ${title}`}
+        width={image.width}
+        height={image.height}
+        className="aspect-video w-full object-cover"
+        data-ai-hint={image.hint}
+      />
       <CardHeader>
         <CardTitle className="text-xl font-bold">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col justify-between">
-        <div>
-          <Image
-            src={image.src}
-            alt={`Imagen del proyecto ${title}`}
-            width={image.width}
-            height={image.height}
-            className="mb-4 aspect-video w-full rounded-lg object-cover"
-            data-ai-hint={image.hint}
-          />
-          <p className="mb-4 text-muted-foreground">{description}</p>
-        </div>
+        <p className="mb-4 text-muted-foreground">{description}</p>
         <div className="flex flex-col items-start gap-4">
           <div className="flex flex-wrap gap-2">
             {technologies.map((Icon, index) => (
