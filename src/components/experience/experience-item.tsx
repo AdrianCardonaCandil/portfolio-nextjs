@@ -22,7 +22,7 @@ export function ExperienceItem({
             <CardTitle className="text-xl font-bold">{title}</CardTitle>
             <div className="text-sm text-muted-foreground">{period}</div>
           </div>
-          <CardDescription className="text-lg">{company}</CardDescription>
+          <CardDescription className="text-lg text-primary">{company}</CardDescription>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">{description}</p>

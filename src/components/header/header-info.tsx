@@ -39,15 +39,15 @@ export function HeaderInfo() {
             </Link>
           </Button>
         </div>
-        <div className="flex gap-2">
-          <Button asChild variant="outline" size="icon">
+        <div className="flex flex-wrap gap-4">
+          <Button asChild variant="outline">
             <Link href="https://github.com" target="_blank" aria-label="GitHub">
-              <Github className="size-5" />
+              <Github /> GitHub
             </Link>
           </Button>
-          <Button asChild variant="outline" size="icon">
+          <Button asChild variant="outline">
             <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <Linkedin className="size-5" />
+              <Linkedin /> LinkedIn
             </Link>
           </Button>
         </div>
