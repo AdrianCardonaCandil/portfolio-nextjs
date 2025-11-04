@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -38,14 +37,14 @@ export function HeaderInfo() {
         </Button>
       </div>
       <div className="flex gap-2">
-        <Button asChild variant="ghost" size="icon">
-          <Link href="https://github.com" target="_blank">
-            <Github className="size-6" />
+        <Button asChild variant="outline" size="icon">
+          <Link href="https://github.com" target="_blank" aria-label="GitHub">
+            <Github className="size-5" />
           </Link>
         </Button>
-        <Button asChild variant="ghost" size="icon">
-          <Link href="https://linkedin.com" target="_blank">
-            <Linkedin className="size-6" />
+        <Button asChild variant="outline" size="icon">
+          <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <Linkedin className="size-5" />
           </Link>
         </Button>
       </div>

@@ -4,10 +4,10 @@ export function HeaderProfileImage() {
   return (
     <div className="order-1 md:order-2">
       <Image
-        src="https://picsum.photos/seed/1/600/600"
+        src="https://picsum.photos/seed/1/400/400"
         alt="Foto de perfil"
-        width={600}
-        height={600}
+        width={400}
+        height={400}
         className="aspect-square rounded-full object-cover shadow-lg"
         data-ai-hint="profile picture"
       />
