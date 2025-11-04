@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeaderProfileImage() {
   return (
-    <div className="order-1 md:order-2">
+    <div className="order-1 flex justify-center md:order-2">
       <Image
         src="https://picsum.photos/seed/1/400/400"
         alt="Foto de perfil"
