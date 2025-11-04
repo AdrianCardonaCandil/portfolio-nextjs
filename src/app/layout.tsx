@@ -1,11 +1,18 @@
 import type {Metadata} from 'next';
+import {Sen} from 'next/font/google';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
+import {Toaster} from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Portfolio-NextJS',
   description: 'A portfolio website built with Next.js',
 };
+
+const sen = Sen({
+  subsets: ['latin'],
+  variable: '--font-sen',
+  weight: ['400', '500', '600', '700'],
+});
 
 export default function RootLayout({
   children,
@@ -13,12 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`${sen.variable} dark`}>
       <body className="font-body antialiased">
         {children}
         <Toaster />
