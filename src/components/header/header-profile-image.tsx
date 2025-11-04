@@ -8,7 +8,7 @@ export function HeaderProfileImage() {
         alt="Foto de perfil"
         width={600}
         height={600}
-        className="aspect-square rounded-full object-cover"
+        className="aspect-square rounded-full object-cover shadow-lg"
         data-ai-hint="profile picture"
       />
     </div>

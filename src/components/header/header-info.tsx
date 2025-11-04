@@ -4,20 +4,20 @@ import Link from "next/link";
 
 export function HeaderInfo() {
   return (
-    <div className="order-2 flex flex-col gap-4 md:order-1">
+    <div className="order-2 flex flex-col gap-6 md:order-1">
       <div className="space-y-2">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+        <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Hola, soy John Doe
         </h1>
-        <p className="text-xl text-muted-foreground">Ingeniero Informático</p>
+        <p className="text-xl text-muted-foreground md:text-2xl">Ingeniero Informático</p>
       </div>
       <div className="flex flex-wrap gap-4">
-        <Button asChild>
+        <Button size="lg" asChild>
           <Link href="#contact">
             Contacto <Send />
           </Link>
         </Button>
-        <Button variant="secondary" asChild>
+        <Button size="lg" variant="secondary" asChild>
           <Link href="/cv.pdf" download>
             Descargar CV <Download />
           </Link>
@@ -26,12 +26,12 @@ export function HeaderInfo() {
       <div className="flex gap-2">
         <Button asChild variant="ghost" size="icon">
           <Link href="https://github.com" target="_blank">
-            <Github />
+            <Github className="size-6" />
           </Link>
         </Button>
         <Button asChild variant="ghost" size="icon">
           <Link href="https://linkedin.com" target="_blank">
-            <Linkedin />
+            <Linkedin className="size-6" />
           </Link>
         </Button>
       </div>
