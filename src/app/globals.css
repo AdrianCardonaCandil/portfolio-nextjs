@@ -83,3 +83,48 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @property --moving-border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .animated-border {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: var(--radius);
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: conic-gradient(
+      from var(--moving-border-angle),
+      hsl(var(--background)),
+      hsl(var(--primary)),
+      hsl(var(--primary)),
+      hsl(var(--background))
+    );
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .animated-border:hover::before {
+    animation-play-state: running;
+  }
+
+  @keyframes spin {
+    0% {
+      --moving-border-angle: 0deg;
+    }
+    100% {
+      --moving-border-angle: 360deg;
+    }
+  }
+}

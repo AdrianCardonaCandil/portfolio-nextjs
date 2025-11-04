@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Job } from "@/lib/experience-data";
+import { cn } from "@/lib/utils";
 
 export function ExperienceItem({
   title,
@@ -14,17 +15,19 @@ export function ExperienceItem({
   description,
 }: Job) {
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-xl font-bold">{title}</CardTitle>
-          <div className="text-sm text-muted-foreground">{period}</div>
-        </div>
-        <CardDescription className="text-lg">{company}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground">{description}</p>
-      </CardContent>
-    </Card>
+    <div className="animated-border rounded-lg">
+      <Card className="h-full w-full">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-xl font-bold">{title}</CardTitle>
+            <div className="text-sm text-muted-foreground">{period}</div>
+          </div>
+          <CardDescription className="text-lg">{company}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
