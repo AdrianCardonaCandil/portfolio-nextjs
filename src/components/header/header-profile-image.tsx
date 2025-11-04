@@ -10,6 +10,7 @@ export function HeaderProfileImage() {
         height={400}
         className="aspect-square rounded-full object-cover shadow-lg"
         data-ai-hint="profile picture"
+        priority
       />
     </div>
   );
