@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {Sen} from 'next/font/google';
 import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
+import {ThemeProvider} from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Portfolio-NextJS',
@@ -20,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sen.variable}`}>
+    <html lang="en" className={`${sen.variable}`} suppressHydrationWarning>
       <body className="font-body antialiased">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <Toaster />
       </body>
     </html>
