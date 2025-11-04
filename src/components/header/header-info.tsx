@@ -1,6 +1,10 @@
+
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin, Send } from "lucide-react";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 export function HeaderInfo() {
   return (
@@ -9,7 +13,17 @@ export function HeaderInfo() {
         <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Hola, soy John Doe
         </h1>
-        <p className="text-xl text-muted-foreground md:text-2xl">Ingeniero Informático</p>
+        <TypeAnimation
+          sequence={[
+            "Ingeniero Informático",
+            1000,
+            "",
+          ]}
+          wrapper="p"
+          cursor={true}
+          repeat={Infinity}
+          className="text-xl text-muted-foreground md:text-2xl"
+        />
       </div>
       <div className="flex flex-wrap gap-4">
         <Button size="lg" asChild>
