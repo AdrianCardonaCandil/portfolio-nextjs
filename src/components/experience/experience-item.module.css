@@ -1,0 +1,42 @@
+@property --moving-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animatedBorder {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  border-radius: var(--radius);
+}
+
+.animatedBorder::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: none;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.animatedBorder:hover::before {
+  background-image: conic-gradient(
+    from var(--moving-border-angle),
+    transparent 0%,
+    hsl(var(--primary)) 10%,
+    transparent 20%
+  );
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  0% {
+    --moving-border-angle: 0deg;
+  }
+  100% {
+    --moving-border-angle: 360deg;
+  }
+}

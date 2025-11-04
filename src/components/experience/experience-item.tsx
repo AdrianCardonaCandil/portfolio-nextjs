@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Job } from "@/lib/experience-data";
-import { cn } from "@/lib/utils";
+import styles from "./experience-item.module.css";
 
 export function ExperienceItem({
   title,
@@ -15,7 +15,7 @@ export function ExperienceItem({
   description,
 }: Job) {
   return (
-    <div className="animated-border rounded-lg">
+    <div className={styles.animatedBorder}>
       <Card className="h-full w-full">
         <CardHeader>
           <div className="flex items-center justify-between">
