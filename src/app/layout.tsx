@@ -23,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sen.variable}`} suppressHydrationWarning>
       <body className="font-body antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>
