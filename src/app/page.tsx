@@ -23,7 +23,7 @@ export default function Home() {
       <Card className="w-full max-w-md text-center shadow-2xl">
         <CardHeader>
           <CardTitle className="font-headline text-3xl font-bold tracking-tight text-foreground">
-            Welcome to Click Counter!
+            Welcome to Click Counter!!
           </CardTitle>
           <CardDescription>
             Click the button below to increase the count.
