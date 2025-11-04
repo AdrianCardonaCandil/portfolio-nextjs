@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sen.variable} dark`}>
+    <html lang="en" className={`${sen.variable}`}>
       <body className="font-body antialiased">
         {children}
         <Toaster />
