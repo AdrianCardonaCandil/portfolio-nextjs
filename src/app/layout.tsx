@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Click Counter',
-  description: 'A simple click counter app built with Next.js',
+  title: 'Portfolio-NextJS',
+  description: 'A portfolio website built with Next.js',
 };
 
 export default function RootLayout({
