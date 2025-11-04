@@ -112,10 +112,9 @@
   .animated-border:hover::before {
     background-image: conic-gradient(
       from var(--moving-border-angle),
-      hsl(var(--background)),
-      hsl(var(--primary)),
-      hsl(var(--primary)),
-      hsl(var(--background))
+      transparent 0%,
+      hsl(var(--primary)) 10%,
+      transparent 20%
     );
     animation-play-state: running;
   }
