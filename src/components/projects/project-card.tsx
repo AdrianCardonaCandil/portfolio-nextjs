@@ -9,7 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { AnimatedBorder } from "@/components/ui/animated-border";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function ProjectCard({
   title,
@@ -37,9 +38,14 @@ export function ProjectCard({
           <div className="flex flex-col items-start gap-4">
             <div className="flex flex-wrap gap-2">
               {technologies.map((Icon, index) => (
-                <Button key={index} variant="outline" size="icon">
+                <div
+                  key={index}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "icon" })
+                  )}
+                >
                   <Icon className="h-4 w-4" />
-                </Button>
+                </div>
               ))}
             </div>
             <Link
