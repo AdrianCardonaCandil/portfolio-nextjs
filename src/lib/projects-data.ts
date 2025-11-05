@@ -1,4 +1,4 @@
-import { LucideProps } from "lucide-react";
+import { Code, Database, Bot, LucideProps } from "lucide-react";
 
 export type Project = {
   title: string;
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: "Plataforma de E-learning",
     description:
       "Una plataforma interactiva para cursos online con seguimiento del progreso y certificación.",
-    technologies: [],
+    technologies: [Code, Database],
     image: {
       src: "https://picsum.photos/seed/10/600/400",
       width: 600,
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: "App de Fitness",
     description:
       "Aplicación móvil para registrar entrenamientos, seguir dietas y conectar con entrenadores.",
-    technologies: [],
+    technologies: [Code],
     image: {
       src: "https://picsum.photos/seed/11/600/400",
       width: 600,
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     title: "Dashboard de Análisis",
     description:
       "Herramienta de visualización de datos para monitorizar métricas de negocio en tiempo real.",
-    technologies: [],
+    technologies: [Code, Database],
     image: {
       src: "https://picsum.photos/seed/12/600/400",
       width: 600,
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     title: "E-commerce de Moda",
     description:
       "Tienda online con un diseño moderno, pasarela de pago integrada y gestión de inventario.",
-    technologies: [],
+    technologies: [Code, Database, Bot],
     image: {
       src: "https://picsum.photos/seed/13/600/400",
       width: 600,
