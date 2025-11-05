@@ -50,17 +50,17 @@ export function Header() {
         <DropdownMenu open={isMenuOpen} onOpenChange={setMenuOpen}>
           <DropdownMenuTrigger asChild>
             <Button
-              variant="outline"
+              variant="default"
               size="icon"
-              className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg"
+              className="fixed top-4 left-4 z-50 rounded-full shadow-lg"
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Abrir menú de navegación</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            align="end"
-            side="top"
+            align="start"
+            side="bottom"
             className="w-56"
             sideOffset={16}
           >
