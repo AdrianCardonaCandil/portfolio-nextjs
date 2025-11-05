@@ -11,7 +11,7 @@
     ]
   },
   "firestore": {
-    "database": "(default)",
+    "database": "portfolio-nextjs-db",
     "location": "eur3",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
