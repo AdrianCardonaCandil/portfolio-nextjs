@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import type { Project } from "@/lib/projects-data";
 import {
   Card,
@@ -53,7 +53,7 @@ export function ProjectCard({
               target="_blank"
               className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
             >
-              <Github className="h-4 w-4" />
+              <FaGithub className="h-4 w-4" />
               Ver en GitHub
             </Link>
           </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { FiMenu } from "react-icons/fi";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -54,7 +54,7 @@ export function Header() {
               size="icon"
               className="fixed top-4 left-4 z-50 rounded-full shadow-lg"
             >
-              <Menu className="h-5 w-5" />
+              <FiMenu className="h-5 w-5" />
               <span className="sr-only">Abrir menú de navegación</span>
             </Button>
           </DropdownMenuTrigger>

@@ -1,9 +1,10 @@
-import { Code, Database, Bot, LucideProps } from "lucide-react";
+import type { IconType } from "react-icons";
+import { SiNextdotjs, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export type Project = {
   title: string;
   description: string;
-  technologies: React.ComponentType<LucideProps>[];
+  technologies: IconType[];
   image: {
     src: string;
     width: number;
@@ -19,7 +20,7 @@ export const projects: Project[] = [
     title: "Plataforma de E-learning",
     description:
       "Una plataforma interactiva para cursos online con seguimiento del progreso y certificación.",
-    technologies: [Code, Database],
+    technologies: [SiReact, SiNextdotjs, SiTailwindcss],
     image: {
       src: "https://picsum.photos/seed/10/600/400",
       width: 600,
@@ -33,7 +34,7 @@ export const projects: Project[] = [
     title: "App de Fitness",
     description:
       "Aplicación móvil para registrar entrenamientos, seguir dietas y conectar con entrenadores.",
-    technologies: [Code],
+    technologies: [SiReact, SiTypescript],
     image: {
       src: "https://picsum.photos/seed/11/600/400",
       width: 600,
@@ -46,7 +47,7 @@ export const projects: Project[] = [
     title: "Dashboard de Análisis",
     description:
       "Herramienta de visualización de datos para monitorizar métricas de negocio en tiempo real.",
-    technologies: [Code, Database],
+    technologies: [SiReact, SiNextdotjs, SiTailwindcss],
     image: {
       src: "https://picsum.photos/seed/12/600/400",
       width: 600,
@@ -59,7 +60,7 @@ export const projects: Project[] = [
     title: "E-commerce de Moda",
     description:
       "Tienda online con un diseño moderno, pasarela de pago integrada y gestión de inventario.",
-    technologies: [Code, Database, Bot],
+    technologies: [SiReact, SiNextdotjs, SiTypescript],
     image: {
       src: "https://picsum.photos/seed/13/600/400",
       width: 600,

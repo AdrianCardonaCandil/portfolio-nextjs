@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Send } from "lucide-react";
+import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoSend } from "react-icons/io5";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 
@@ -30,24 +31,24 @@ export function HeaderInfo() {
         <div className="flex flex-wrap gap-4">
           <Button size="lg" asChild>
             <Link href="#contact">
-              Contacto <Send />
+              Contacto <IoSend />
             </Link>
           </Button>
           <Button size="lg" variant="secondary" asChild>
             <Link href="/cv.pdf" download>
-              Descargar CV <Download />
+              Descargar CV <FaDownload />
             </Link>
           </Button>
         </div>
         <div className="flex flex-wrap gap-4">
           <Button asChild variant="outline">
             <Link href="https://github.com" target="_blank" aria-label="GitHub">
-              <Github /> GitHub
+              <FaGithub /> GitHub
             </Link>
           </Button>
           <Button asChild variant="outline">
             <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <Linkedin /> LinkedIn
+              <FaLinkedin /> LinkedIn
             </Link>
           </Button>
         </div>

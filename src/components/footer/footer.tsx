@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Instagram, Linkedin, MapPin } from "lucide-react";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
 
 export function Footer() {
   return (
@@ -11,19 +12,19 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">Ingeniero Informático</p>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-muted-foreground" />
+            <IoLocationSharp className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">España</span>
           </div>
         </div>
         <div className="flex gap-4">
           <Link href="https://github.com" target="_blank" aria-label="GitHub">
-            <Github className="text-muted-foreground transition-colors hover:text-primary" />
+            <FaGithub className="text-muted-foreground transition-colors hover:text-primary" />
           </Link>
           <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-            <Linkedin className="text-muted-foreground transition-colors hover:text-primary" />
+            <FaLinkedin className="text-muted-foreground transition-colors hover:text-primary" />
           </Link>
           <Link href="https://instagram.com" target="_blank" aria-label="Instagram">
-            <Instagram className="text-muted-foreground transition-colors hover:text-primary" />
+            <FaInstagram className="text-muted-foreground transition-colors hover:text-primary" />
           </Link>
         </div>
       </div>

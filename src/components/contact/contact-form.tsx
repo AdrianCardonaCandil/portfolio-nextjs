@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/app/actions/send-email";
-import { Send } from "lucide-react";
+import { IoSend } from "react-icons/io5";
 
 const formSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres."),
@@ -124,7 +124,7 @@ export function ContactForm() {
         <div className="flex justify-end">
           <Button type="submit" size="lg" disabled={form.formState.isSubmitting}>
             {form.formState.isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-            <Send />
+            <IoSend />
           </Button>
         </div>
       </form>
