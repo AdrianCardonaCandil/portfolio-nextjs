@@ -3,7 +3,7 @@ import { ExperienceItem } from "./experience-item";
 
 export function Experience() {
   return (
-    <section className="w-full py-24 md:py-32">
+    <section id="experience" className="w-full py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

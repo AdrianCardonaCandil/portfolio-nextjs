@@ -1,13 +1,33 @@
-import { HeaderInfo } from "./header-info";
-import { HeaderProfileImage } from "./header-profile-image";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { href: "#about", label: "Sobre mí" },
+  { href: "#experience", label: "Experiencia" },
+  { href: "#projects", label: "Proyectos" },
+  { href: "#contact", label: "Contacto" },
+];
 
 export function Header() {
   return (
-    <section className="w-full bg-card/50 py-24 md:py-32">
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 md:grid-cols-2 md:px-8">
-        <HeaderInfo />
-        <HeaderProfileImage />
+    <header className="sticky top-0 z-50 hidden w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:block">
+      <div className="container flex h-14 items-center">
+        <nav className="flex items-center gap-4 text-sm">
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={label}
+              href={href}
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "text-muted-foreground transition-colors hover:text-foreground"
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
       </div>
-    </section>
+    </header>
   );
 }
