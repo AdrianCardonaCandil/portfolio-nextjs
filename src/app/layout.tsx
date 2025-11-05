@@ -3,6 +3,7 @@ import {Sen} from 'next/font/google';
 import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
 import {ThemeProvider} from '@/components/theme-provider';
+import { Footer } from '@/components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'Portfolio-NextJS',
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <ThemeProvider>
           {children}
+          <Footer />
         </ThemeProvider>
         <Toaster />
       </body>
