@@ -11,7 +11,7 @@ export type Job = {
 export type Project = {
     title: string;
     description: string;
-    technologies: IconType[];
+    technologies: string[];
     image: {
         src: string;
         width: number;
