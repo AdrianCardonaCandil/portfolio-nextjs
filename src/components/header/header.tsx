@@ -5,7 +5,12 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -16,7 +21,7 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isSheetOpen, setSheetOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -42,8 +47,8 @@ export function Header() {
 
       {/* Mobile Header */}
       <div className="md:hidden">
-        <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
-          <SheetTrigger asChild>
+        <DropdownMenu open={isMenuOpen} onOpenChange={setMenuOpen}>
+          <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
               size="icon"
@@ -52,22 +57,26 @@ export function Header() {
               <Menu className="h-5 w-5" />
               <span className="sr-only">Abrir menú de navegación</span>
             </Button>
-          </SheetTrigger>
-          <SheetContent side="bottom" className="w-full rounded-t-lg">
-            <nav className="mt-4 flex flex-col items-center gap-4">
-              {navLinks.map(({ href, label }) => (
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            align="end"
+            side="top"
+            className="w-56"
+            sideOffset={16}
+          >
+            {navLinks.map(({ href, label }) => (
+              <DropdownMenuItem key={label} asChild>
                 <Link
-                  key={label}
                   href={href}
-                  className="w-full py-2 text-center text-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
-                  onClick={() => setSheetOpen(false)}
+                  className="w-full text-center text-lg font-medium text-muted-foreground"
+                  onClick={() => setMenuOpen(false)}
                 >
                   {label}
                 </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </>
   );
