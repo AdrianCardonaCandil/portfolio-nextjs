@@ -6,9 +6,9 @@
 
 .animatedBorder {
   position: relative;
+  border-radius: var(--radius);
   border: 1px solid transparent;
   background-clip: padding-box;
-  border-radius: var(--radius);
 }
 
 .animatedBorder::before {
