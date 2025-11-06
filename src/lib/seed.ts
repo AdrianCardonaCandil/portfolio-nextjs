@@ -89,3 +89,5 @@ const projects: Project[] = [
         colSpan: 2
     }
 ]
+
+export { jobs, projects }

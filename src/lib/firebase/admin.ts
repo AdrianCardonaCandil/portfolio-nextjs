@@ -1,22 +1,20 @@
-import 'server-only';
+import admin, { ServiceAccount } from "firebase-admin";
 
-import admin from 'firebase-admin';
-import { getFirestore } from 'firebase-admin/firestore'
+const serviceAccount: ServiceAccount = {
+    projectId: process.env.SERVICE_ACCOUNT_API_KEY_PROJECT_ID,
+    privateKey: process.env.SERVICE_ACCOUNT_API_KEY_PRIVATE_KEY,
+    clientEmail: process.env.SERVICE_ACCOUNT_API_KEY_CLIENT_EMAIL,
+};
 
-// Reading the key from Google Cloud Secret Manager as a Env Variable.
-const serviceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
-
-if (!admin.apps.length) {
-    if (!serviceAccountKey) {
-        console.warn('Firebase Admin SDK no se inicializó: FIREBASE_SERVICE_ACCOUNT_KEY no está definida.')
-    } else {
-        admin.initializeApp({
-            credential: admin.credential.cert(JSON.parse(serviceAccountKey))
-        })
-    }
+export function getFirebaseAdmin() {
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  }
+  return admin;
 }
 
-// Exporting the admin services for backend development
-const adminDb = admin.apps.length ? getFirestore() : null;
-
-export { adminDb }
+const firebaseAdmin = getFirebaseAdmin();
+const db = firebaseAdmin.firestore();
+export { firebaseAdmin, db, serviceAccount };
