@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import type { Job } from "@/lib/experience-data";
+import type { Job } from "@/lib/definitions";
 import { AnimatedBorder } from "@/components/ui/animated-border";
 
 export function ExperienceItem({

@@ -1,7 +1,10 @@
-import { jobs } from "@/lib/experience-data";
+import { getJobs } from "@/lib/firebase/firestore";
 import { ExperienceItem } from "./experience-item";
+import type { Job } from "@/lib/definitions";
 
-export function Experience() {
+export async function Experience() {
+  const jobs = (await getJobs()) as Job[] || [];
+
   return (
     <section id="experience" className="w-full py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-8">
@@ -14,8 +17,8 @@ export function Experience() {
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-3xl gap-8">
-          {jobs.map((job) => (
-            <ExperienceItem key={job.company} {...job} />
+          {jobs.map((job, index) => (
+            <ExperienceItem key={index} {...job} />
           ))}
         </div>
       </div>
