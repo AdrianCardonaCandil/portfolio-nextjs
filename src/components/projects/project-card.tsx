@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import type { Project } from "@/lib/projects-data";
+import type { Project } from "@/lib/definitions";
 import {
   Card,
   CardContent,
@@ -11,6 +11,7 @@ import {
 import { AnimatedBorder } from "@/components/ui/animated-border";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { iconParser } from "@/lib/iconMap";
 
 export function ProjectCard({
   title,
@@ -37,16 +38,20 @@ export function ProjectCard({
           <p className="mb-4 text-muted-foreground">{description}</p>
           <div className="flex flex-col items-start gap-4">
             <div className="flex flex-wrap gap-2">
-              {technologies.map((Icon, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "icon" })
-                  )}
-                >
-                  <Icon className="h-4 w-4" />
-                </div>
-              ))}
+              {technologies.map((techName, index) => {
+                const Icon = (iconParser as any)[techName];
+                if (!Icon) return null;
+                return (
+                  <div
+                    key={index}
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "icon" })
+                    )}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </div>
+                );
+              })}
             </div>
             <Link
               href={githubUrl}

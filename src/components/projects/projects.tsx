@@ -1,8 +1,11 @@
-import { projects } from "@/lib/projects-data";
+import { getProjects } from "@/lib/firebase/firestore";
 import { ProjectCard } from "./project-card";
 import { cn } from "@/lib/utils";
+import type { Project } from "@/lib/definitions";
 
-export function Projects() {
+export async function Projects() {
+  const projects = (await getProjects()) as Project[] || [];
+
   return (
     <section id="projects" className="w-full bg-card/50 py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-8">
