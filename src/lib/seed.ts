@@ -1,5 +1,4 @@
 // File used to populate the database the first time the application is run.
-import { adminDb } from "./firebase/admin";
 import { Job } from "./definitions";
 import { Project } from "./definitions";
 
@@ -90,23 +89,3 @@ const projects: Project[] = [
         colSpan: 2
     }
 ]
-
-try {
-    if (adminDb) {
-        const jobsCollection = adminDb.collection('jobs');
-        const projectsCollection = adminDb.collection('projects');
-        await adminDb.runTransaction(async transation => {
-            jobs.forEach(job => {
-                const document = jobsCollection.doc();
-                transation.set(document, job);
-            })
-            projects.forEach(project => {
-                const document = projectsCollection.doc();
-                transation.set(document, project);
-            })
-        })
-    }
-} catch (error) {
-    console.error(error);
-    console.warn('No se ha podido añadir los datos de inicialización a DB')
-}
