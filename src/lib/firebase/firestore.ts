@@ -20,3 +20,25 @@ export const seedDatabase = async () => {
         console.error('Error while seeding database: ', error);
     }
 }
+
+export const getJobs = async () => {
+    try {
+        const jobsRef = db.collection("jobs");
+        const snapshot = await jobsRef.get();
+        const jobs = snapshot.docs.map(doc => doc.data());
+        return jobs;
+    } catch (error) {
+        console.error('Error while getting jobs: ', error);
+    }
+};
+
+export const getProjects = async () => {
+    try {
+        const projectsRef = db.collection("projects");
+        const snapshot = await projectsRef.get();
+        const projects = snapshot.docs.map(doc => doc.data());
+        return projects;
+    } catch (error) {
+        console.error('Error while getting projects: ', error);
+    }
+};
