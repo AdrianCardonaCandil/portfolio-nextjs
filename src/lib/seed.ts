@@ -29,7 +29,7 @@ const projects: Project[] = [
             'SiDocker'
         ],
         image: {
-            src: 'https://firebasestorage.googleapis.com/v0/b/porfolio-nextjs.firebasestorage.app/o/plant-buddies.jpg?alt=media&token=967b7305-1625-4df4-b8f8-285bb9aa96b4',
+            src: 'https://firebasestorage.googleapis.com/v0/b/portfolio-nextjs-sic.firebasestorage.app/o/plant-buddies.jpg?alt=media&token=c336a876-a33f-4319-8019-b068aeb9a9ac',
             width: 600,
             height: 400,
             hint: 'Imagen de portada para el repositorio Plant Buddies'
@@ -51,7 +51,7 @@ const projects: Project[] = [
             'SiPython'
         ],
         image: {
-            src: 'https://firebasestorage.googleapis.com/v0/b/porfolio-nextjs.firebasestorage.app/o/mqtt-parking-slot-detector.jpg?alt=media&token=2ae9053d-7f1a-41ef-ab23-d9026e26d8de',
+            src: 'https://firebasestorage.googleapis.com/v0/b/portfolio-nextjs-sic.firebasestorage.app/o/mqtt-parking-slot-detector.jpg?alt=media&token=05d60a24-1d4f-4e69-bfc4-7f09d125285a',
             width: 600,
             height: 400,
             hint: 'Imagen de portada para el repositorio MQTT Parking Slot Detector'
@@ -64,7 +64,7 @@ const projects: Project[] = [
         Java Swing`,
         technologies: [ 'DiJava' ],
         image: {
-            src: 'https://firebasestorage.googleapis.com/v0/b/porfolio-nextjs.firebasestorage.app/o/image-viewer.jpg?alt=media&token=1f0ee398-2884-4667-a2e3-a782b68aebfb',
+            src: 'https://firebasestorage.googleapis.com/v0/b/portfolio-nextjs-sic.firebasestorage.app/o/image-viewer.jpg?alt=media&token=1375d1f7-4f71-4683-9d59-5ad0639534ec',
             width: 600,
             height: 400,
             hint: 'Imagen de portada para el repositorio Image Viewer'
@@ -80,7 +80,7 @@ const projects: Project[] = [
             'SiFirebase'
         ],
         image: {
-            src: 'https://firebasestorage.googleapis.com/v0/b/porfolio-nextjs.firebasestorage.app/o/anitrack.jpg?alt=media&token=c5cf7c0d-d7d8-4e7e-83d1-ccee270ac608',
+            src: 'https://firebasestorage.googleapis.com/v0/b/portfolio-nextjs-sic.firebasestorage.app/o/anitrack.jpg?alt=media&token=2162391c-8be9-4eba-8cf1-fbca5bd39a7f',
             width: 600,
             height: 400,
             hint: 'Imagen de portada para el repositorio Anitrack'

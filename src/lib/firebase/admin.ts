@@ -1,14 +1,14 @@
 import admin, { ServiceAccount } from "firebase-admin";
 
 // Reading environment variables from .env.local file.
-const serviceAccount: ServiceAccount = JSON.parse(process.env.SERVICE_ACCOUNT_API_KEY!)
+// const serviceAccount: ServiceAccount = JSON.parse(process.env.SERVICE_ACCOUNT_API_KEY!)
 
 // Creating singleton instance of SDK admin application.
 export function getFirebaseAdmin() {
   if (!admin.apps.length) {
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    });
+    admin.initializeApp(
+      //{credential: admin.credential.cert(serviceAccount)},
+    );
   }
   return admin;
 }
