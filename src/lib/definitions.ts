@@ -1,5 +1,5 @@
 // This file contains type definitions for your data.
-import type { IconType } from "react-icons";
+import { z } from "zod";
 
 export type Job = {
     title: string;
@@ -21,3 +21,12 @@ export type Project = {
     githubUrl: string;
     colSpan?: number;
 };
+
+export const emailSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  subject: z.string(),
+  message: z.string(),
+});
+
+export type EmailData = z.infer<typeof emailSchema>;

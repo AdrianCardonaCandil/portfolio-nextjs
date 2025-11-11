@@ -1,5 +1,6 @@
 import { db } from "./admin";
 import { jobs, projects } from "../seed";
+import { EmailData } from "../definitions";
 
 export const seedDatabase = async () => {
     try {
@@ -40,5 +41,16 @@ export const getProjects = async () => {
         return projects;
     } catch (error) {
         console.error('Error while getting projects: ', error);
+    }
+};
+
+export const writeEmail = async (data: EmailData) => {
+    try {
+        const emailRef = db.collection("emails");
+        const document = emailRef.doc();
+        await document.set(data);
+        console.log("Email data sended to collection");
+    } catch (error) {
+        console.error('Error while sending email: ', error);
     }
 };
